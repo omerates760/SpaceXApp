@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="launcherItem"
+            type="com.monofire.spacexapp.data.model.LauncherResponse" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:id="@+id/imgLauncherLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:imgUrl="@{launcherItem.links.missionPatch}"
+                app:layout_constraintBottom_toBottomOf="@id/cardViewLayout"
+                app:layout_constraintEnd_toStartOf="@id/txtLauncherName"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/cardViewLayout"
+                app:layout_constraintTop_toTopOf="@id/cardViewLayout"
+                app:layout_constraintWidth_percent="0.3"
+                tools:src="@drawable/ic_search" />
+
+            <TextView
+                android:id="@+id/txtLauncherName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:maxLines="3"
+                android:text="dfsdfdsfd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/cardViewLayout"
+                app:layout_constraintStart_toEndOf="@id/imgLauncherLogo"
+                app:layout_constraintTop_toTopOf="@id/imgLauncherLogo"
+                app:layout_constraintWidth_percent="0.5"
+                tools:text="@string/app_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
